@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-
+#新增方法
 class MLD(nn.Module):
     """
     Multi-Label Distillation loss for self-distillation

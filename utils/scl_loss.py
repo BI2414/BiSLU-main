@@ -1,7 +1,7 @@
 import torch
 import torch.nn.functional as F
 
-
+#deepseek补充的代码
 def scl_intent_loss_func(intent_vectors, intent_labels, temperature=0.07):
     """
     Supervised Contrastive Loss for intent detection (multi-label)

@@ -67,7 +67,7 @@ def get_pred_entity(cate_pred, span_scores, is_flat_ner=True):
             res_entity.append((t, ns, ne))
     return set(res_entity)
 
-
+#新增方法
 def get_useful_embedding(embeddings, mask):
     """
     Extract useful embeddings based on the provided mask
