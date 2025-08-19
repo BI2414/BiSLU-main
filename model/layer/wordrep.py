@@ -1,7 +1,7 @@
 import torch
 from torch import nn
 from transformers import AutoModel
-
+# 词表示层（BERT编码器）
 class MeanPooling(nn.Module):
     def __init__(self):
         super(MeanPooling, self).__init__()

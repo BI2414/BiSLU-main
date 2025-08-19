@@ -4,7 +4,7 @@ import torch.nn as nn
 from model.layer import FeedforwardLayer, BiaffineLayer
 
 
-
+# 意图分类器（线性层）
 class IntentClassifier(nn.Module):
     def __init__(self, input_dim, num_intent_labels, dropout_rate=0.0):
         super(IntentClassifier, self).__init__()
@@ -15,7 +15,7 @@ class IntentClassifier(nn.Module):
         x = self.dropout(x)
         return self.linear(x)
 
-
+# 槽位分类器（含Biaffine机制）
 class SlotClassifier(nn.Module):
     def __init__(
             self,
@@ -47,7 +47,7 @@ class SlotClassifier(nn.Module):
             inSize1=hidden_dim, inSize2=hidden_dim, classSize=256)
         self.classifier = nn.Linear(256,num_slot_labels)
 
-    def forward(self, word_context, intent_context):
+    def forward(self, word_context, intent_context,word_attention_mask=None):
 
         if self.use_intent_context_attn:
             intent_context = self.sigmoid(intent_context)

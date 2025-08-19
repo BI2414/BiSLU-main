@@ -1,7 +1,7 @@
 import torch.nn as nn
 import torch
 
-
+# 双仿射层，建模词对关系
 class BiaffineLayer(nn.Module):
     def __init__(self, inSize1, inSize2, classSize, dropout=0.3):
         super(BiaffineLayer, self).__init__()

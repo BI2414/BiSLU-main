@@ -4,7 +4,7 @@ from model.layer import *
 from utils.utils import get_soft_slot
 from transformers import AutoConfig
 
-
+# 主模型，联合处理意图(ID)和槽位(SF)
 class JointModel(nn.Module):
     def __init__(self, args, num_intent_labels, num_slot_labels):
         super(JointModel, self).__init__()
