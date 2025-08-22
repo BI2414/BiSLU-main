@@ -168,6 +168,17 @@ if __name__ == '__main__':
     )
     parser.add_argument('--use_sd', action='store_true',
                     help="Whether to use slot cnn.")
+    # 在参数解析器中添加
+    parser.add_argument("--use_co_attention", action="store_true",
+                        help="Whether to use co-attention mechanism")
+    # parser.add_argument("--co_attention_proj_dim", type=int, default=150,
+    #                     help="Projection dimension for the co-attention layer")
 
+    parser.add_argument("--use_span_self_attention", action="store_true",
+                        help="Whether to use self-attention over span representations")
+    parser.add_argument("--span_attn_heads", type=int, default=4,
+                        help="Number of attention heads in the span self-attention layer")
+    parser.add_argument("--span_attn_dropout", type=float, default=0.1,
+                        help="Dropout rate for the span self-attention layer")
     args = parser.parse_args()
     main(args)

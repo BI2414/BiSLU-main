@@ -100,7 +100,7 @@ class Trainer(object):
             
         return model
 
-
+    #新增方法compute_scl_loss
     def compute_scl_loss(self, model, cls_output, segment_embedding, slot_labels, intent_labels, mask, inputs):
 
 
